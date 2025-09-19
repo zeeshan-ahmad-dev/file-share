@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const baseAPI = import.meta.env.BACKEND_URL;
+const baseAPI = import.meta.env.VITE_BACKEND_URL;
 
 function Home() {
   const [isLoader, setIsLoader] = useState(false);
@@ -11,12 +11,13 @@ function Home() {
   const navigate = useNavigate();
 
   async function createRoom() {
+    console.log(baseAPI)
     setIsLoader(true);
     try {
       const res = await axios.post(`${baseAPI}/create-room`);
       console.log(res);
 
-      navigate(`/room/${res.data.room.roomId}`);
+      // navigate(`/room/${res.data.room.roomId}`);
     } catch (error) {
       alert(error);
     } finally {

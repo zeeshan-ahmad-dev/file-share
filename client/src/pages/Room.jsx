@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { CheckCircle, XCircle } from "lucide-react";
 import { io } from "socket.io-client";
 
-const baseAPI = import.meta.env.BACKEND_URL;
+const baseAPI = import.meta.env.VITE_BACKEND_URL;
 const socket = io(baseAPI);
 
 function Room() {
