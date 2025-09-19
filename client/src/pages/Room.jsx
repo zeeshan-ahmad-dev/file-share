@@ -6,7 +6,7 @@ import { CheckCircle, XCircle } from "lucide-react";
 import { io } from "socket.io-client";
 
 const baseAPI = import.meta.env.VITE_BACKEND_URL;
-const socket = io(baseAPI);
+const socket = io(baseAPI, { transports: ["websocket"] });
 
 function Room() {
   const [isLoader, setIsLoader] = useState(false);
