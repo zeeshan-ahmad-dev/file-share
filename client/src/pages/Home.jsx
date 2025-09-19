@@ -17,7 +17,7 @@ function Home() {
       const res = await axios.post(`${baseAPI}/create-room`);
       console.log(res);
 
-      // navigate(`/room/${res.data.room.roomId}`);
+      navigate(`/room/${res.data.room.roomId}`);
     } catch (error) {
       alert(error);
     } finally {
