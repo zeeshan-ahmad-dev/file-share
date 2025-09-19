@@ -13,7 +13,8 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: ["http://localhost:5173", "https://file-share-production.up.railway.app"],
+    methods: ["GET", "POST"]
   },
 });
 
@@ -22,7 +23,7 @@ app.set('io', io)
 io.on("connection", (socket) => {
   console.log("a user connected:", socket.id);
 
-  socket.on("disconnected", () => {
+  socket.on("disconnect", () => {
     console.log("user disconnected:", socket.id);
   });
 });
