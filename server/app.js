@@ -11,6 +11,11 @@ import { Server } from "socket.io";
 const app = express();
 const server = http.createServer(app);
 
+app.use(cors({
+  origin: ["http://localhost:5173", "https://file-share-z.vercel.app"],
+  credentials: true
+}));
+
 const io = new Server(server, {
   cors: {
     origin: ["http://localhost:5173", "https://file-share-z.vercel.app"],
@@ -33,10 +38,6 @@ connectDB();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(cors({
-  origin: ["http://localhost:5173", "https://file-share-z.vercel.app"],
-  credentials: true
-}));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use("/", router);
