@@ -25,7 +25,7 @@ A real-time file sharing app built with **MERN (MongoDB, Express, React, Node.js
 1. **Clone the repository and install dependencies**
 
 ```bash
-git clone https://github.com/yourusername/file-share.git
+git clone https://github.com/zeeshan-ahmad-dev/file-share.git
 cd file-share
 ```
 2. **Create .env files**
